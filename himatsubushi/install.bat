@@ -18,6 +18,13 @@ timeout /t 1 > nul
 .\aria2c.exe --file-allocation=none --continue=true https://github.com/07th-mod/resources/releases/download/Nipah/Himatsubushi-Voices.zip
 timeout /t 1 > nul
 
+call :colorEcho a0 "Downloading MangaGamer sprites patch..."
+echo.
+timeout /t 1 > nul
+.\aria2c.exe --file-allocation=none --continue=true https://github.com/jwgrlrrajn/higurashi-steam-sprite-mods/releases/download/1.1.1/himatsubushi-steam-sprites.zip
+.\aria2c.exe --file-allocation=none --continue=true https://github.com/jwgrlrrajn/higurashi-steam-sprite-mods/releases/download/1.1.1/himatsubushi-steam-sprites.Chibi.PS3.zip
+timeout /t 1 > nul
+
 call :colorEcho a0 "Downloading patch..."
 echo.
 timeout /t 1 > nul
@@ -27,6 +34,9 @@ timeout /t 1 > nul
 call :colorEcho a0 "Extracting files..."
 echo.
 timeout /t 1 > nul
+.\7za.exe x himatsubushi-steam-sprites.Chibi.PS3.zip
+move .\Chibi* .\CGAlt > nul
+echo S | .\7za.exe x himatsubushi-steam-sprites.zip
 .\7za.exe x Himatsubushi-Voices.zip
 .\7za.exe x Himatsubushi.Voice.and.Graphics.Patch.v1.2.zip
 .\7za.exe x himatsubushi-graphics.zip
@@ -46,6 +56,7 @@ call :colorEcho a0 "Deleting useless files..."
 echo.
 timeout /t 1 > nul
 rmdir /S /Q .\CG > nul
+rmdir /S /Q .\CGAlt > nul
 rmdir /S /Q .\himatsubushi-master > nul
 rmdir /S /Q .\SE > nul
 del .\*.zip > nul

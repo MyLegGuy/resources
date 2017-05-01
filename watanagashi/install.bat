@@ -21,8 +21,8 @@ timeout /t 1 > nul
 call :colorEcho a0 "Downloading MangaGamer sprites patch..."
 echo.
 timeout /t 1 > nul
-.\aria2c.exe --file-allocation=none --continue=true https://github.com/jwgrlrrajn/higurashi-steam-sprite-mods/releases/download/1.0.1/onikakushi-steam-sprites.zip
-.\aria2c.exe --file-allocation=none --continue=true https://github.com/jwgrlrrajn/higurashi-steam-sprite-mods/releases/download/1.0.1/watanagashi-steam-sprites.zip
+.\aria2c.exe --file-allocation=none --continue=true https://github.com/jwgrlrrajn/higurashi-steam-sprite-mods/releases/download/1.1.1/onikakushi-steam-sprites.zip
+.\aria2c.exe --file-allocation=none --continue=true https://github.com/jwgrlrrajn/higurashi-steam-sprite-mods/releases/download/1.1.1/watanagashi-steam-sprites.zip
 timeout /t 1 > nul
 
 call :colorEcho a0 "Downloading patch..."
