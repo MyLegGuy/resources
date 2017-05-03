@@ -51,6 +51,7 @@ echo D | xcopy /E /Y .\CGAlt ..\CGAlt > nul
 echo D | xcopy /E /Y .\CG ..\CG > nul
 echo D | xcopy /E /Y .\SE ..\SE > nul
 echo D | xcopy /E /Y .\himatsubushi-master\Update ..\Update > nul
+echo D | xcopy /E /Y .\himatsubushi-master\SE ..\SE > nul
 
 call :colorEcho a0 "Deleting useless files..."
 echo.
