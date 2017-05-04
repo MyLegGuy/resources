@@ -21,7 +21,7 @@ timeout /t 1 > nul
 call :colorEcho a0 "Downloading patch..."
 echo.
 timeout /t 1 > nul
-.\aria2c.exe --file-allocation=none --continue=true https://github.com/07th-mod/meakashi/releases/download/v1.2/Meakashi.Voice.and.Graphics.Patch.v1.0.zip
+.\aria2c.exe --file-allocation=none --continue=true https://github.com/07th-mod/meakashi/releases/download/v1.0/Meakashi.Voice.and.Graphics.Patch.v1.0.zip
 timeout /t 1 > nul
 
 call :colorEcho a0 "Extracting files..."
