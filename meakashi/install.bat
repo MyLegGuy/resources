@@ -28,7 +28,7 @@ call :colorEcho a0 "Extracting files..."
 echo.
 timeout /t 1 > nul
 .\7za.exe x Meakashi-Voices.zip
-echo A | .\7za.exe x Meakashi.Voice.and.Graphics.Patch.v1.0.zip
+echo A | .\7za.exe x Meakashi.Voice.and.Graphics.Patch.v1.2.zip
 .\7za.exe x meakashi-graphics.zip
 move .\meakashi-graphics-master* .\meakashi-graphics > nul
 echo D | xcopy /E /Y .\meakashi-graphics\CGAlt .\CG > nul
