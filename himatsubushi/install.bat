@@ -9,7 +9,7 @@ echo.
 call :colorEcho 0a "Sometimes you won't get a download ETA or file size, but the download will be completed normally"
 echo.
 timeout /t 1 > nul
-.\aria2c.exe -o himatsubushi-graphics.zip --file-allocation=none --continue=true https://gitlab.com/07th-mod/himatsubushi-graphics/repository/archive.zip?ref=master
+.\aria2c.exe --file-allocation=none --continue=true https://github.com/07th-mod/resources/releases/download/Nipah/Himatsubushi-CG.zip
 timeout /t 1 > nul
 
 call :colorEcho a0 "Downloading voice patch..."
@@ -21,8 +21,7 @@ timeout /t 1 > nul
 call :colorEcho a0 "Downloading MangaGamer sprites patch..."
 echo.
 timeout /t 1 > nul
-.\aria2c.exe --file-allocation=none --continue=true https://github.com/jwgrlrrajn/higurashi-steam-sprite-mods/releases/download/1.1.1/himatsubushi-steam-sprites.zip
-.\aria2c.exe --file-allocation=none --continue=true https://github.com/jwgrlrrajn/higurashi-steam-sprite-mods/releases/download/1.1.1/himatsubushi-steam-sprites.Chibi.PS3.zip
+.\aria2c.exe --file-allocation=none --continue=true https://github.com/07th-mod/resources/releases/download/Nipah/Himatsubushi-CGAlt.zip
 timeout /t 1 > nul
 
 call :colorEcho a0 "Downloading patch..."
@@ -34,15 +33,10 @@ timeout /t 1 > nul
 call :colorEcho a0 "Extracting files..."
 echo.
 timeout /t 1 > nul
-.\7za.exe x himatsubushi-steam-sprites.Chibi.PS3.zip
-move .\Chibi* .\CGAlt > nul
-echo S | .\7za.exe x himatsubushi-steam-sprites.zip
+.\7za.exe x Himatsubushi-CG.zip
+.\7za.exe x Himatsubushi-CGAlt.zip
 .\7za.exe x Himatsubushi-Voices.zip
 .\7za.exe x Himatsubushi.Voice.and.Graphics.Patch.v1.2.zip
-.\7za.exe x himatsubushi-graphics.zip
-move .\himatsubushi-graphics-master* .\himatsubushi-graphics > nul
-echo D | xcopy /E /Y .\himatsubushi-graphics\CGAlt .\CG > nul
-rmdir /S /Q .\himatsubushi-graphics > nul
 timeout /t 1 > nul
 
 call :colorEcho a0 "Moving folders..."

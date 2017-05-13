@@ -9,7 +9,7 @@ echo.
 call :colorEcho 0a "Sometimes you won't get a download ETA or file size, but the download will be completed normally"
 echo.
 timeout /t 1 > nul
-.\aria2c.exe -o meakashi-graphics.zip --file-allocation=none --continue=true https://gitlab.com/07th-mod/meakashi-graphics/repository/archive.zip?ref=master
+.\aria2c.exe --file-allocation=none --continue=true https://github.com/07th-mod/resources/releases/download/Nipah/Meakashi-CG.zip
 timeout /t 1 > nul
 
 call :colorEcho a0 "Downloading voice patch..."
@@ -29,10 +29,8 @@ echo.
 timeout /t 1 > nul
 .\7za.exe x Meakashi-Voices.zip
 echo A | .\7za.exe x Meakashi.Voice.and.Graphics.Patch.v1.2.zip
-.\7za.exe x meakashi-graphics.zip
-move .\meakashi-graphics-master* .\meakashi-graphics > nul
-echo D | xcopy /E /Y .\meakashi-graphics\CGAlt .\CG > nul
-rmdir /S /Q .\meakashi-graphics > nul
+.\7za.exe x Meakashi-CG.zip
+rmdir /S /Q ..\CG > nul
 timeout /t 1 > nul
 
 call :colorEcho a0 "Moving folders..."

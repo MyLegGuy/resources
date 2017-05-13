@@ -9,7 +9,7 @@ echo.
 call :colorEcho 0a "Sometimes you won't get a download ETA or file size, but the download will be completed normally"
 echo.
 timeout /t 1 > nul
-.\aria2c.exe -o watanagashi-graphics.zip --file-allocation=none --continue=true https://gitlab.com/07th-mod/watanagashi-graphics/repository/archive.zip?ref=master
+.\aria2c.exe --file-allocation=none --continue=true https://github.com/07th-mod/resources/releases/download/Nipah/Watanagashi-CG.zip
 timeout /t 1 > nul
 
 call :colorEcho a0 "Downloading voice patch..."
@@ -21,8 +21,7 @@ timeout /t 1 > nul
 call :colorEcho a0 "Downloading MangaGamer sprites patch..."
 echo.
 timeout /t 1 > nul
-.\aria2c.exe --file-allocation=none --continue=true https://github.com/jwgrlrrajn/higurashi-steam-sprite-mods/releases/download/1.1.1/onikakushi-steam-sprites.zip
-.\aria2c.exe --file-allocation=none --continue=true https://github.com/jwgrlrrajn/higurashi-steam-sprite-mods/releases/download/1.1.1/watanagashi-steam-sprites.zip
+.\aria2c.exe --file-allocation=none --continue=true https://github.com/07th-mod/resources/releases/download/Nipah/Watanagashi-CGAlt.zip
 timeout /t 1 > nul
 
 call :colorEcho a0 "Downloading patch..."
@@ -34,18 +33,10 @@ timeout /t 1 > nul
 call :colorEcho a0 "Extracting files..."
 echo.
 timeout /t 1 > nul
-.\7za.exe x onikakushi-steam-sprites.zip
-.\7za.exe x watanagashi-steam-sprites.zip
-echo D | xcopy /E /Y .\watanagashi-steam-sprites\watanagashi-steam-sprites\CGAlt .\CGAlt > nul
-echo D | xcopy /E /Y .\onikakushi-steam-sprites\onikakushi-steam-sprites\CGAlt .\CGAlt > nul
-rmdir /S /Q .\watanagashi-steam-sprites > nul
-rmdir /S /Q .\onikakushi-steam-sprites > nul
+.\7za.exe x Watanagashi-CGAlt.zip
 .\7za.exe x Watanagashi-Voices.zip
-echo S | .\7za.exe x Watanagashi.Voice.and.Graphics.Patch.v1.6.zip
+echo A | .\7za.exe x Watanagashi.Voice.and.Graphics.Patch.v1.6.zip
 .\7za.exe x watanagashi-graphics.zip
-move .\watanagashi-graphics-master* .\watanagashi-graphics > nul
-echo D | xcopy /E /Y .\watanagashi-graphics\CGAlt .\CG > nul
-rmdir /S /Q .\watanagashi-graphics > nul
 timeout /t 1 > nul
 
 call :colorEcho a0 "Moving folders..."

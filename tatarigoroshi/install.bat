@@ -9,7 +9,7 @@ echo.
 call :colorEcho 0a "Sometimes you won't get a download ETA or file size, but the download will be completed normally"
 echo.
 timeout /t 1 > nul
-.\aria2c.exe -o tatarigoroshi-graphics.zip --file-allocation=none --continue=true https://gitlab.com/07th-mod/tatarigoroshi-graphics/repository/archive.zip?ref=master
+.\aria2c.exe --file-allocation=none --continue=true https://github.com/07th-mod/resources/releases/download/Nipah/Tatarigoroshi-CG.zip
 timeout /t 1 > nul
 
 call :colorEcho a0 "Downloading voice patch..."
@@ -21,7 +21,7 @@ timeout /t 1 > nul
 call :colorEcho a0 "Downloading MangaGamer sprites patch..."
 echo.
 timeout /t 1 > nul
-.\aria2c.exe --file-allocation=none --continue=true https://github.com/jwgrlrrajn/higurashi-steam-sprite-mods/releases/download/1.1.1/tatarigoroshi-steam-sprites.zip
+.\aria2c.exe --file-allocation=none --continue=true https://github.com/07th-mod/resources/releases/download/Nipah/Tatarigoroshi-CGAlt.zip
 timeout /t 1 > nul
 
 call :colorEcho a0 "Downloading patch..."
@@ -33,15 +33,10 @@ timeout /t 1 > nul
 call :colorEcho a0 "Extracting files..."
 echo.
 timeout /t 1 > nul
-.\7za.exe x tatarigoroshi-steam-sprites.zip
-echo D | xcopy /E /Y .\tatarigoroshi-steam-sprites\CGAlt .\CGAlt > nul
-rmdir /S /Q .\tatarigoroshi-steam-sprites > nul
+.\7za.exe x Tatarigoroshi-CGAlt.zip
 .\7za.exe x Tatarigoroshi-Voices.zip
-echo S | .\7za.exe x Tatarigoroshi.Voice.and.Graphics.Patch.v1.7.zip
-.\7za.exe x tatarigoroshi-graphics.zip
-move .\tatarigoroshi-graphics-master* .\tatarigoroshi-graphics > nul
-echo D | xcopy /E /Y .\tatarigoroshi-graphics\CGAlt .\CG > nul
-rmdir /S /Q .\tatarigoroshi-graphics > nul
+echo A | .\7za.exe x Tatarigoroshi.Voice.and.Graphics.Patch.v1.7.zip
+.\7za.exe x Tatarigoroshi-CG.zip
 timeout /t 1 > nul
 
 call :colorEcho a0 "Moving folders..."

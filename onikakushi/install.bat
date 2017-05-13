@@ -9,7 +9,7 @@ echo.
 call :colorEcho 0a "Sometimes you won't get a download ETA or file size, but the download will be completed normally"
 echo.
 timeout /t 1 > nul
-.\aria2c.exe -o onikakushi-graphics.zip --file-allocation=none --continue=true https://gitlab.com/07th-mod/onikakushi-graphics/repository/archive.zip?ref=master
+.\aria2c.exe --file-allocation=none --continue=true https://github.com/07th-mod/resources/releases/download/Nipah/Onikakushi-CG.zip
 timeout /t 1 > nul
 
 call :colorEcho a0 "Downloading voice patch..."
@@ -21,7 +21,7 @@ timeout /t 1 > nul
 call :colorEcho a0 "Downloading MangaGamer sprites patch..."
 echo.
 timeout /t 1 > nul
-.\aria2c.exe --file-allocation=none --continue=true https://github.com/jwgrlrrajn/higurashi-steam-sprite-mods/releases/download/1.1.1/onikakushi-steam-sprites.zip
+.\aria2c.exe --file-allocation=none --continue=true https://github.com/07th-mod/resources/releases/download/Nipah/Onikakushi-CGAlt.zip
 timeout /t 1 > nul
 
 call :colorEcho a0 "Downloading patch..."
@@ -33,15 +33,10 @@ timeout /t 1 > nul
 call :colorEcho a0 "Extracting files..."
 echo.
 timeout /t 1 > nul
-.\7za.exe x onikakushi-steam-sprites.zip
-echo D | xcopy /E /Y .\onikakushi-steam-sprites\onikakushi-steam-sprites\CGAlt .\CGAlt > nul
-rmdir /S /Q .\onikakushi-steam-sprites > nul
+.\7za.exe x Onikakushi-CGAlt.zip
 .\7za.exe x Onikakushi-Voices.zip
-echo S | .\7za.exe x PS3.Voice.and.Graphics.Patch.v.2.1.zip
-.\7za.exe x onikakushi-graphics.zip
-move .\onikakushi-graphics-master* .\onikakushi-graphics > nul
-echo D | xcopy /E /Y .\onikakushi-graphics\CGAlt .\CG > nul
-rmdir /S /Q .\onikakushi-graphics > nul
+echo A | .\7za.exe x PS3.Voice.and.Graphics.Patch.v.2.1.zip
+.\7za.exe x Onikakushi-CG.zip
 timeout /t 1 > nul
 
 call :colorEcho a0 "Moving folders..."
