@@ -12,6 +12,12 @@ timeout /t 1 > nul
 .\aria2c.exe --file-allocation=none --continue=true https://github.com/07th-mod/resources/releases/download/Nipah/Meakashi-CG.zip
 timeout /t 1 > nul
 
+call :colorEcho a0 "Downloading MangaGamer sprites patch..."
+echo.
+timeout /t 1 > nul
+.\aria2c.exe --file-allocation=none --continue=true https://github.com/07th-mod/resources/releases/download/Nipah/Meakashi-CGAlt.zip
+timeout /t 1 > nul
+
 call :colorEcho a0 "Downloading voice patch..."
 echo.
 timeout /t 1 > nul
