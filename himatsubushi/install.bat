@@ -27,7 +27,7 @@ timeout /t 1 > nul
 call :colorEcho a0 "Downloading patch..."
 echo.
 timeout /t 1 > nul
-.\aria2c.exe --file-allocation=none --continue=true https://github.com/07th-mod/himatsubushi/releases/download/v1.2/Himatsubushi.Voice.and.Graphics.Patch.v1.2.zip
+.\aria2c.exe --file-allocation=none --continue=true https://github.com/07th-mod/himatsubushi/releases/download/v1.5/Himatsubushi.Voice.and.Graphics.Patch.v1.5.zip
 timeout /t 1 > nul
 
 call :colorEcho a0 "Extracting files..."
@@ -36,7 +36,7 @@ timeout /t 1 > nul
 .\7za.exe x Himatsubushi-CG.zip
 .\7za.exe x Himatsubushi-CGAlt.zip
 .\7za.exe x Himatsubushi-Voices.zip
-.\7za.exe x Himatsubushi.Voice.and.Graphics.Patch.v1.2.zip
+echo A | .\7za.exe x Himatsubushi.Voice.and.Graphics.Patch.v1.5.zip
 timeout /t 1 > nul
 
 call :colorEcho a0 "Moving folders..."
@@ -44,15 +44,14 @@ echo.
 echo D | xcopy /E /Y .\CGAlt ..\CGAlt > nul
 echo D | xcopy /E /Y .\CG ..\CG > nul
 echo D | xcopy /E /Y .\SE ..\SE > nul
-echo D | xcopy /E /Y .\himatsubushi-master\Update ..\Update > nul
-echo D | xcopy /E /Y .\himatsubushi-master\SE ..\SE > nul
+echo D | xcopy /E /Y .\Update ..\Update > nul
 
 call :colorEcho a0 "Deleting useless files..."
 echo.
 timeout /t 1 > nul
 rmdir /S /Q .\CG > nul
 rmdir /S /Q .\CGAlt > nul
-rmdir /S /Q .\himatsubushi-master > nul
+rmdir /S /Q .\Update > nul
 rmdir /S /Q .\SE > nul
 del .\*.zip > nul
 timeout /t 1 > nul
