@@ -36,7 +36,7 @@ timeout /t 1 > nul
 .\7za.exe x Watanagashi-CGAlt.zip
 .\7za.exe x Watanagashi-Voices.zip
 echo A | .\7za.exe x Watanagashi.Voice.and.Graphics.Patch.v2.0.zip
-.\7za.exe x watanagashi-graphics.zip
+.\7za.exe x Watanagashi-CG.zip
 timeout /t 1 > nul
 
 call :colorEcho a0 "Moving folders..."
