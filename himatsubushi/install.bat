@@ -37,6 +37,8 @@ timeout /t 1 > nul
 .\7za.exe x Himatsubushi-CGAlt.zip
 .\7za.exe x Himatsubushi-Voices.zip
 echo A | .\7za.exe x Himatsubushi.Voice.and.Graphics.Patch.v1.5.zip
+rmdir /S /Q ..\CG > nul
+rmdir /S /Q ..\CGAlt > nul
 timeout /t 1 > nul
 
 call :colorEcho a0 "Moving folders..."

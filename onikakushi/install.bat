@@ -37,6 +37,8 @@ timeout /t 1 > nul
 .\7za.exe x Onikakushi-Voices.zip
 echo A | .\7za.exe x Onikakushi.Voice.and.Graphics.Patch.v2.5.zip
 .\7za.exe x Onikakushi-CG.zip
+rmdir /S /Q ..\CG > nul
+rmdir /S /Q ..\CGAlt > nul
 timeout /t 1 > nul
 
 call :colorEcho a0 "Moving folders..."

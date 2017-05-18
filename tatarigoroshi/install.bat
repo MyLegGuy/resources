@@ -37,6 +37,8 @@ timeout /t 1 > nul
 .\7za.exe x Tatarigoroshi-Voices.zip
 echo A | .\7za.exe x Tatarigoroshi.Voice.and.Graphics.Patch.v2.0.zip
 .\7za.exe x Tatarigoroshi-CG.zip
+rmdir /S /Q ..\CG > nul
+rmdir /S /Q ..\CGAlt > nul
 timeout /t 1 > nul
 
 call :colorEcho a0 "Moving folders..."
