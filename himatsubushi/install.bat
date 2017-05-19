@@ -27,7 +27,7 @@ timeout /t 1 > nul
 call :colorEcho a0 "Downloading patch..."
 echo.
 timeout /t 1 > nul
-.\aria2c.exe --file-allocation=none --continue=true https://github.com/07th-mod/himatsubushi/releases/download/v1.5/Himatsubushi.Voice.and.Graphics.Patch.v1.5.zip
+.\aria2c.exe --file-allocation=none --continue=true https://github.com/07th-mod/himatsubushi/releases/download/v1.5.1/Himatsubushi.Voice.and.Graphics.Patch.v1.5.1.zip
 timeout /t 1 > nul
 
 call :colorEcho a0 "Extracting files..."
@@ -36,7 +36,7 @@ timeout /t 1 > nul
 .\7za.exe x Himatsubushi-CG.zip
 .\7za.exe x Himatsubushi-CGAlt.zip
 .\7za.exe x Himatsubushi-Voices.zip
-echo A | .\7za.exe x Himatsubushi.Voice.and.Graphics.Patch.v1.5.zip
+echo A | .\7za.exe x Himatsubushi.Voice.and.Graphics.Patch.v1.5.1.zip
 rmdir /S /Q ..\CG > nul
 rmdir /S /Q ..\CGAlt > nul
 timeout /t 1 > nul
