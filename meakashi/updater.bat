@@ -22,7 +22,7 @@ echo 4) Update the Voice patch
 echo:
 set /p choice=Type the number of your chosen option and press enter: 
 
-if %choice%==1 goto :Update
+if %choice%==1 goto :Patch
 if %choice%==2 goto :CG
 if %choice%==3 goto :CGAlt
 if %choice%==4 goto :SE
@@ -31,7 +31,7 @@ echo "%choice%" is not a valid option. Do your best and type it correctly now.
 echo.
 goto start
 
-:Update
+:Patch
 call :colorEcho a0 "Downloading patch..."
 echo.
 timeout /t 1 > nul
@@ -39,7 +39,7 @@ timeout /t 1 > nul
 call :colorEcho a0 "Extracting files..."
 echo.
 timeout /t 1 > nul
-echo A | .\7za.exe x Meakashi.Voice.and.Graphics.Patch.*.zip
+.\7za.exe x Meakashi.Voice.and.Graphics.Patch.*.zip
 call :colorEcho a0 "Moving folders..."
 echo.
 timeout /t 1 > nul
