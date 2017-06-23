@@ -19,6 +19,7 @@ echo 1) Update the patch scripts (Update folder)
 echo 2) Update the PS3 graphics patch
 echo 3) Update the MangaGamer graphics patch
 echo 4) Update the Voice patch
+echo 5) Change your game from NVL to ADV mode (Unstable)
 echo:
 set /p choice=Type the number of your chosen option and press enter: 
 
@@ -26,6 +27,7 @@ if %choice%==1 goto :Patch
 if %choice%==2 goto :CG
 if %choice%==3 goto :CGAlt
 if %choice%==4 goto :SE
+if %choice%==4 goto :ADV
 
 echo "%choice%" is not a valid option. Do your best and type it correctly now.
 echo.
@@ -50,6 +52,7 @@ echo.
 timeout /t 1 > nul
 rmdir /S /Q .\Update > nul
 rmdir /S /Q .\SE > nul
+cls
 call :colorEcho a0 "All done, you can close the window now or update other patches."
 timeout /t 3 > nul
 goto start
@@ -71,6 +74,7 @@ call :colorEcho a0 "Deleting useless files..."
 echo.
 timeout /t 1 > nul
 rmdir /S /Q .\CG > nul
+cls
 call :colorEcho a0 "All done, you can close the window now or update other patches."
 timeout /t 3 > nul
 goto start
@@ -92,6 +96,7 @@ call :colorEcho a0 "Deleting useless files..."
 echo.
 timeout /t 1 > nul
 rmdir /S /Q .\CGAlt > nul
+cls
 call :colorEcho a0 "All done, you can close the window now or update other patches."
 timeout /t 3 > nul
 goto start
@@ -113,6 +118,31 @@ call :colorEcho a0 "Deleting useless files..."
 echo.
 timeout /t 1 > nul
 rmdir /S /Q .\SE > nul
+cls
+call :colorEcho a0 "All done, you can close the window now or update other patches."
+timeout /t 3 > nul
+goto start
+
+:Patch
+call :colorEcho a0 "Downloading ADV mode patch..."
+echo.
+timeout /t 1 > nul
+.\aria2c.exe -o adv-mode.zip --file-allocation=none --continue=true https://github.com/07th-mod/meakashi/archive/adv-mode.zip
+call :colorEcho a0 "Extracting files..."
+echo.
+timeout /t 1 > nul
+.\7za.exe x adv-mode.zip
+call :colorEcho a0 "Moving folders..."
+echo.
+timeout /t 1 > nul
+echo D | xcopy /E /Y .\meakashi-adv-mode\SE ..\SE > nul
+echo D | xcopy /E /Y .\meakashi-adv-mode\Update ..\Update > nul
+echo D | xcopy /E /Y .\meakashi-adv-mode\CG ..\CG > nul
+call :colorEcho a0 "Deleting useless files..."
+echo.
+timeout /t 1 > nul
+rmdir /S /Q .\meakashi-adv-mode > nul
+cls
 call :colorEcho a0 "All done, you can close the window now or update other patches."
 timeout /t 3 > nul
 goto start
