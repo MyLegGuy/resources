@@ -27,7 +27,7 @@ if %choice%==1 goto :Patch
 if %choice%==2 goto :CG
 if %choice%==3 goto :CGAlt
 if %choice%==4 goto :SE
-if %choice%==4 goto :ADV
+if %choice%==5 goto :ADV
 
 echo "%choice%" is not a valid option. Do your best and type it correctly now.
 echo.
