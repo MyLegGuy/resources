@@ -123,7 +123,7 @@ call :colorEcho a0 "All done, you can close the window now or update other patch
 timeout /t 3 > nul
 goto start
 
-:Patch
+:ADV
 call :colorEcho a0 "Downloading ADV mode patch..."
 echo.
 timeout /t 1 > nul
