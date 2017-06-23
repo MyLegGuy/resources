@@ -142,7 +142,7 @@ call :colorEcho a0 "Deleting useless files..."
 echo.
 timeout /t 1 > nul
 rmdir /S /Q .\meakashi-adv-mode > nul
-del ..\CompiledUpdateScripts\* > nul
+del ..\CompiledUpdateScripts\*.mg > nul
 cls
 call :colorEcho a0 "All done, you can close the window now or update other patches."
 timeout /t 3 > nul
