@@ -56,6 +56,7 @@ rmdir /S /Q .\CGAlt > nul
 rmdir /S /Q .\Update > nul
 rmdir /S /Q .\SE > nul
 del .\*.zip > nul
+del ..\CompiledUpdateScripts\*.mg > nul
 timeout /t 1 > nul
 
 call :colorEcho a0 "All done, finishing in three seconds..."
