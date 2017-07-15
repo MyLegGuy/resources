@@ -35,8 +35,8 @@ echo.
 timeout /t 1 > nul
 .\7za.exe x Onikakushi-CGAlt.zip
 .\7za.exe x Onikakushi-Voices.zip
-echo A | .\7za.exe x Onikakushi.Voice.and.Graphics.Patch.v3.0.0.zip
 .\7za.exe x Onikakushi-CG.zip
+echo A | .\7za.exe x Onikakushi.Voice.and.Graphics.Patch.v3.0.0.zip
 rmdir /S /Q ..\CG > nul
 rmdir /S /Q ..\CGAlt > nul
 timeout /t 1 > nul
