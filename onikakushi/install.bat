@@ -27,7 +27,7 @@ timeout /t 1 > nul
 call :colorEcho a0 "Downloading patch..."
 echo.
 timeout /t 1 > nul
-.\aria2c.exe --file-allocation=none --continue=true https://github.com/07th-mod/onikakushi/releases/download/v2.5.1/Onikakushi.Voice.and.Graphics.Patch.v2.5.1.zip
+.\aria2c.exe --file-allocation=none --continue=true https://github.com/07th-mod/onikakushi/releases/download/v3.0.0/Onikakushi.Voice.and.Graphics.Patch.v3.0.0.zip
 timeout /t 1 > nul
 
 call :colorEcho a0 "Extracting files..."
@@ -35,7 +35,7 @@ echo.
 timeout /t 1 > nul
 .\7za.exe x Onikakushi-CGAlt.zip
 .\7za.exe x Onikakushi-Voices.zip
-echo A | .\7za.exe x Onikakushi.Voice.and.Graphics.Patch.v2.5.1.zip
+echo A | .\7za.exe x Onikakushi.Voice.and.Graphics.Patch.v3.0.0.zip
 .\7za.exe x Onikakushi-CG.zip
 rmdir /S /Q ..\CG > nul
 rmdir /S /Q ..\CGAlt > nul
