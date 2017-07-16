@@ -127,21 +127,21 @@ goto start
 call :colorEcho a0 "Downloading ADV mode patch..."
 echo.
 timeout /t 1 > nul
-.\aria2c.exe -o adv-mode.zip --file-allocation=none --continue=true https://github.com/07th-mod/meakashi/archive/adv-mode.zip
+.\aria2c.exe -o adv-mode.zip --file-allocation=none --continue=true https://github.com/07th-mod/meakashi/archive/master.zip
 call :colorEcho a0 "Extracting files..."
 echo.
 timeout /t 1 > nul
-.\7za.exe x adv-mode.zip
+.\7za.exe x meakashi-master.zip
 call :colorEcho a0 "Moving folders..."
 echo.
 timeout /t 1 > nul
-echo D | xcopy /E /Y .\meakashi-adv-mode\SE ..\SE > nul
-echo D | xcopy /E /Y .\meakashi-adv-mode\Update ..\Update > nul
-echo D | xcopy /E /Y .\meakashi-adv-mode\CG ..\CG > nul
+echo D | xcopy /E /Y .\meakashi-master\SE ..\SE > nul
+echo D | xcopy /E /Y .\meakashi-master\Update ..\Update > nul
+echo D | xcopy /E /Y .\meakashi-master\CG ..\CG > nul
 call :colorEcho a0 "Deleting useless files..."
 echo.
 timeout /t 1 > nul
-rmdir /S /Q .\meakashi-adv-mode > nul
+rmdir /S /Q .\meakashi-master > nul
 del ..\CompiledUpdateScripts\*.mg > nul
 cls
 call :colorEcho a0 "All done, you can close the window now or update other patches."
