@@ -27,7 +27,7 @@ timeout /t 1 > nul
 call :colorEcho a0 "Downloading patch..."
 echo.
 timeout /t 1 > nul
-.\aria2c.exe --file-allocation=none --continue=true https://github.com/07th-mod/watanagashi/releases/download/v2.0.1/Watanagashi.Voice.and.Graphics.Patch.v2.0.1.zip
+.\aria2c.exe --file-allocation=none --continue=true https://github.com/07th-mod/watanagashi/releases/download/v2.5.0/Watanagashi.Voice.and.Graphics.Patch.v2.5.0.zip
 timeout /t 1 > nul
 
 call :colorEcho a0 "Extracting files..."
@@ -36,7 +36,7 @@ timeout /t 1 > nul
 .\7za.exe x Watanagashi-CGAlt.zip
 .\7za.exe x Watanagashi-CG.zip
 .\7za.exe x Watanagashi-Voices.zip
-echo A | .\7za.exe x Watanagashi.Voice.and.Graphics.Patch.v2.0.1.zip
+echo A | .\7za.exe x Watanagashi.Voice.and.Graphics.Patch.v2.5.0.zip
 rmdir /S /Q ..\CG > nul
 rmdir /S /Q ..\CGAlt > nul
 timeout /t 1 > nul
