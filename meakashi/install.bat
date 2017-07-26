@@ -34,9 +34,9 @@ call :colorEcho a0 "Extracting files..."
 echo.
 timeout /t 1 > nul
 .\7za.exe x Meakashi-Voices.zip
-echo A | .\7za.exe x Meakashi.Voice.and.Graphics.Patch.v1.5.2.zip
 .\7za.exe x Meakashi-CG.zip
 .\7za.exe x Meakashi-CGAlt.zip
+echo A | .\7za.exe x Meakashi.Voice.and.Graphics.Patch.v1.5.2.zip
 rmdir /S /Q ..\CG > nul
 rmdir /S /Q ..\CGAlt > nul
 timeout /t 1 > nul
