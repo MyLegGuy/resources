@@ -27,7 +27,6 @@ if %choice%==1 goto :Patch
 if %choice%==2 goto :CG
 if %choice%==3 goto :CGAlt
 if %choice%==4 goto :SE
-if %choice%==5 goto :ADV
 
 echo "%choice%" is not a valid option. Do your best and type it correctly now.
 echo.
@@ -37,7 +36,7 @@ goto start
 call :colorEcho a0 "Downloading patch..."
 echo.
 timeout /t 1 > nul
-.\aria2c.exe --file-allocation=none --continue=true https://github.com/07th-mod/meakashi/releases/download/v1.5.2/Meakashi.Voice.and.Graphics.Patch.v1.5.2.zip
+.\aria2c.exe --file-allocation=none --continue=true https://github.com/07th-mod/meakashi/releases/download/v2.0.0/Meakashi.Voice.and.Graphics.Patch.v2.0.0.zip
 call :colorEcho a0 "Extracting files..."
 echo.
 timeout /t 1 > nul
@@ -122,32 +121,6 @@ cls
 call :colorEcho a0 "All done, you can close the window now or update other patches."
 timeout /t 3 > nul
 goto start
-
-:ADV
-call :colorEcho a0 "Downloading ADV mode patch..."
-echo.
-timeout /t 1 > nul
-.\aria2c.exe -o adv-mode.zip --file-allocation=none --continue=true https://github.com/07th-mod/meakashi/archive/master.zip
-call :colorEcho a0 "Extracting files..."
-echo.
-timeout /t 1 > nul
-.\7za.exe x meakashi-master.zip
-call :colorEcho a0 "Moving folders..."
-echo.
-timeout /t 1 > nul
-echo D | xcopy /E /Y .\meakashi-master\SE ..\SE > nul
-echo D | xcopy /E /Y .\meakashi-master\Update ..\Update > nul
-echo D | xcopy /E /Y .\meakashi-master\CG ..\CG > nul
-call :colorEcho a0 "Deleting useless files..."
-echo.
-timeout /t 1 > nul
-rmdir /S /Q .\meakashi-master > nul
-del ..\CompiledUpdateScripts\*.mg > nul
-cls
-call :colorEcho a0 "All done, you can close the window now or update other patches."
-timeout /t 3 > nul
-goto start
-
 
 
 exit
